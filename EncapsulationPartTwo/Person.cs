@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
+using System.Xml.Linq;
 
 namespace EncapsulationPartTwo
 {
@@ -16,10 +18,10 @@ namespace EncapsulationPartTwo
         //Constructor for the person class
         public Person(string firstName, string lastName, int age, decimal salary)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.salary = salary;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.Salary = salary;
         }
 
         public string FirstName
@@ -28,6 +30,14 @@ namespace EncapsulationPartTwo
             {
                 return this.firstName;
             }
+            private set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("First name cannot contain fewer than 3 symbols!");
+                }
+                this.firstName = value;
+            }
         }
 
         public string LastName
@@ -35,6 +45,14 @@ namespace EncapsulationPartTwo
             get
             {
                 return this.lastName;
+            }
+            private set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException("Last name cannot contain fewer than 3 symbols!");
+                }
+                this.lastName = value;
             }
 
         }
@@ -45,6 +63,14 @@ namespace EncapsulationPartTwo
             {
                 return this.salary;
             }
+            private set
+            {
+                if (value < 460)
+                {
+                    throw new ArgumentException("Salary cannot be less than 460 dollar!");
+                }
+                this.salary = value;
+            }
         }
 
         public int Age
@@ -52,6 +78,14 @@ namespace EncapsulationPartTwo
             get
             {
                 return this.age;
+            }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Age cannot be zero or a negative integer!");
+                }
+                this.age = value;
             }
 
         }
