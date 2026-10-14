@@ -7,4 +7,4 @@ Error handling with exceptions are included, which alerts the user if invalid na
 
 ### Key Takeaways
 Working on OOP-fundamentals is great for me as it builds a solid foundation which we'll build upon later in the course for fullstack development,
-I found it especially good to practice using the 'this' keyword, utilizing 'getters' and 'setters' and making the distinction between fields and properties.
+I found it especially good to practice using the `this` keyword, utilizing `getters` and `setters` and making the distinction between fields and properties.
